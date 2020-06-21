@@ -1,2 +1,2 @@
-# BullerDodger
+# BulletDodger
 Mobile Game
