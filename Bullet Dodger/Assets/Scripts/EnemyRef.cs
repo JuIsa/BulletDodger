@@ -1,8 +1,10 @@
 ﻿using System;
+using UnityEngine;
 
 [Serializable]
 public class EnemyRef
 {
-    public EnemyContent prefabToSpawn;
+    public EnemyContent enemyPrefabToSpawn;
+    public GameObject bulletPrefab;
     
 }

@@ -7,12 +7,19 @@ public class EnemyMove : MonoBehaviour
 
     private void Update()
     {
-        for(int i = 0; i < Main.EnemyMain.enemies.Count; i++)
-        {
-            Main.EnemyMain.enemies[i].transform.position = Vector3.MoveTowards(Main.EnemyMain.enemies[i].transform.position, Main.EnemyMain.destinations[i], Time.deltaTime);
-
-        }
+        MoveEnemies();
     }
 
+    private static void MoveEnemies()
+    {
+        for (int i = 0; i < Main.EnemyMain.enemies.Count; i++)
+        {
+            if (Vector3.Distance(Main.EnemyMain.enemies[i].transform.position, Main.EnemyMain.destinations[i]) < .5f)
+                Main.EnemyMain.ReachedDestination(Main.EnemyMain.enemies[i], Main.EnemyMain.destinations[i]);
+            else
+                Main.EnemyMain.enemies[i].transform.position = Vector3.MoveTowards(Main.EnemyMain.enemies[i].transform.position, Main.EnemyMain.destinations[i], Time.deltaTime);
 
+            Main.EnemyMain.timers[i] += Time.deltaTime;
+        }
+    }
 }
