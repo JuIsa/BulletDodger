@@ -193,7 +193,7 @@ GameObject:
   - component: {fileID: 529329970}
   m_Layer: 0
   m_Name: Systems
-  m_TagString: Untagged
+  m_TagString: Main
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -227,7 +227,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be30497a2d9b9e548bc5003cfe3e6ee6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyContent: {fileID: 0}
   enemyMain: {fileID: 1008194012}
 --- !u!1 &705507993
 GameObject:
@@ -413,8 +412,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1008194015}
-  - component: {fileID: 1008194012}
   - component: {fileID: 1008194014}
+  - component: {fileID: 1008194012}
   - component: {fileID: 1008194013}
   m_Layer: 0
   m_Name: Enemy
@@ -438,7 +437,9 @@ MonoBehaviour:
   refs:
     prefabToSpawn: {fileID: 1309644327046290158, guid: 79f511ef16700854ab4e475451081612,
       type: 3}
+  globalRefs: {fileID: 11400000, guid: b5771ef917aa3144bae8c2f1567eaaca, type: 2}
   enemies: []
+  destinations: []
 --- !u!114 &1008194013
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -679,7 +680,7 @@ PrefabInstance:
     - target: {fileID: 1309644327046290157, guid: 79f511ef16700854ab4e475451081612,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.2
+      value: -0.01
       objectReference: {fileID: 0}
     - target: {fileID: 1309644327046290157, guid: 79f511ef16700854ab4e475451081612,
         type: 3}
@@ -689,7 +690,7 @@ PrefabInstance:
     - target: {fileID: 1309644327046290157, guid: 79f511ef16700854ab4e475451081612,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 4.32
       objectReference: {fileID: 0}
     - target: {fileID: 1309644327046290157, guid: 79f511ef16700854ab4e475451081612,
         type: 3}
