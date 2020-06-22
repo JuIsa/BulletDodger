@@ -16,8 +16,8 @@ public class BulletCollisions : MonoBehaviour
 
     private void BulletCollected(Collision other, BulletContent bullet)
     {
-        if (!other.gameObject.CompareTag("Wall"))
-            return;
+        if (other.gameObject.CompareTag("Wall"))
+            Main.BulletMain.BulletHitWall(bullet);
         else
             bullet.gameObject.SetActive(false);
     }

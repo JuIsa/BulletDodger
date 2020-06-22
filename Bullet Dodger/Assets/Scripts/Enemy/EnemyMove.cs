@@ -19,9 +19,7 @@ public class EnemyMove : MonoBehaviour
             if (Vector3.Distance(Main.EnemyMain.enemies[i].transform.position, Main.EnemyMain.enemies[i].destination) < .5f)
                 Main.EnemyMain.ReachedDestination(Main.EnemyMain.enemies[i]);
             else if(Main.EnemyMain.enemies[i].gameObject.activeSelf)
-            {
                 Main.EnemyMain.enemies[i].transform.position = Vector3.MoveTowards(Main.EnemyMain.enemies[i].transform.position, Main.EnemyMain.enemies[i].destination, Time.deltaTime);
-            }
                 
         }
     }

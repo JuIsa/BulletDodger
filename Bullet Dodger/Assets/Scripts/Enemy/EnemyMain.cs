@@ -9,7 +9,9 @@ public class EnemyMain : MonoBehaviour
     public EnemyRef refs;
     public GlobalRefs globalRefs;
     public EnemyPooling enemyPooling;
-    
+
+    public Transform enemiesKeeper;
+
     public event Action init;
     public event Action<EnemyContent> onEnemyReachedDestination;
     

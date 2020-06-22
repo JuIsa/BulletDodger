@@ -7,10 +7,10 @@ public class EnemyPooling : MonoBehaviour
 {
     private void Awake()
     {
-        Main.EnemyMain.onEnemyReachedDestination += EnqueueEnemy;
+        Main.EnemyMain.onEnemyReachedDestination += AddToPool;
     }
 
-    private void EnqueueEnemy(EnemyContent enemy)
+    private void AddToPool(EnemyContent enemy)
     {
         
         enemy.gameObject.transform.position = UtilityCustom.GetRandomPosition();
@@ -19,10 +19,9 @@ public class EnemyPooling : MonoBehaviour
         enemy.gameObject.SetActive(false);
     }
 
-    public EnemyContent DequeueEnemy() 
+    public EnemyContent GetFromPool() 
     {
         EnemyContent enemy = Main.EnemyMain.enemiesPool.Dequeue();
-        
         enemy.gameObject.SetActive(true);
         return enemy;
     }

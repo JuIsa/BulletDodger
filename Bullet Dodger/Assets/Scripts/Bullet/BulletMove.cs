@@ -20,13 +20,17 @@ public class BulletMove : MonoBehaviour
     {
         while (true)
         {
-            for(int i = 0; i < Main.BulletMain.bullets.Count; i++)
-            {
-                var step = 2 * Time.deltaTime;
-                var position = Main.BulletMain.bullets[i].gameObject.transform.forward*Time.deltaTime;
-                Main.BulletMain.bullets[i].rb.AddForce(Main.BulletMain.bullets[i].gameObject.transform.forward);
-            }
+            for (int i = 0; i < Main.BulletMain.bullets.Count; i++)
+                if (Main.BulletMain.bullets[i].gameObject.activeSelf)
+                    MoveBullet(Main.BulletMain.bullets[i]);
             yield return null;
         }
+    }
+
+    private void MoveBullet(BulletContent bullet)
+    {
+        var step = 2 * Time.deltaTime;
+        var position = bullet.gameObject.transform.forward * Time.deltaTime;
+        bullet.rb.AddForce(bullet.gameObject.transform.forward);
     }
 }
