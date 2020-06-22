@@ -382,6 +382,8 @@ GameObject:
   - component: {fileID: 288523559}
   - component: {fileID: 288523561}
   - component: {fileID: 288523560}
+  - component: {fileID: 288523562}
+  - component: {fileID: 288523563}
   m_Layer: 0
   m_Name: Bullets
   m_TagString: Untagged
@@ -432,6 +434,30 @@ MonoBehaviour:
     bulletToSpawn: {fileID: -6404020931889715410, guid: 4beaa67e2beecd1438698ae7d3623f35,
       type: 3}
   bullets: []
+--- !u!114 &288523562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 288523558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50c5e8c9fd9356949b5623e867566546, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &288523563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 288523558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 063298d49b2ee70429da1f7b11eda3c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &478101339
 GameObject:
   m_ObjectHideFlags: 0
@@ -762,7 +788,6 @@ GameObject:
   - component: {fileID: 1008194013}
   - component: {fileID: 1008194016}
   - component: {fileID: 1008194017}
-  - component: {fileID: 1008194018}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -855,18 +880,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7e05c4ba6453cd7498733e17fe1d6603, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1008194018
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1008194011}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 063298d49b2ee70429da1f7b11eda3c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1515002092

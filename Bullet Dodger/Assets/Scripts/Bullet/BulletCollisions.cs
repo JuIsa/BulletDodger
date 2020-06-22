@@ -11,12 +11,12 @@ public class BulletCollisions : MonoBehaviour
 
     private void AddCatcherToBullet(BulletContent bullet)
     {
+        Debug.Log("bullet get collder " + bullet.gameObject);
         bullet.collisionCatcher.OnCollisionEnterEvent += collis => BulletCollected(collis, bullet);
     }
 
     private void BulletCollected(Collision other, BulletContent bullet)
     {
-        Debug.Log("Collided");
         if (!other.gameObject.CompareTag("Wall"))
             return;
         else
