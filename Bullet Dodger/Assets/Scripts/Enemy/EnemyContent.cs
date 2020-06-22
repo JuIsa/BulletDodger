@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyContent : MonoBehaviour
 {
-    public Vector3 position;
+    public Vector3 destination;
+    public float timer;
     public CollisionCatcher collisionCatcher;
 }

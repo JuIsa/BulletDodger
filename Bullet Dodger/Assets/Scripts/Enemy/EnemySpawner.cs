@@ -19,12 +19,25 @@ public class EnemySpawner : MonoBehaviour
         {
             yield return new WaitForSeconds(3);
             Vector3 randomPosition = UtilityCustom.GetRandomPosition();
-            EnemyContent go;
             Vector3 destination = UtilityCustom.GetDestination();
-            Main.EnemyMain.destinations.Add(destination);
-            go = Instantiate(Main.EnemyMain.refs.enemyPrefabToSpawn,randomPosition, Quaternion.identity);
-            Main.EnemyMain.enemies.Add(go);
-            Main.EnemyMain.timers.Add(0f);
+
+            if (Main.EnemyMain.enemiesPool.Count != 0)
+            {
+                EnemyContent go = Main.EnemyMain.enemyPooling.DequeueEnemy();
+                go.gameObject.transform.position = randomPosition;
+                go.destination = destination;
+                go.timer = 0f;
+
+            }
+            else
+            {
+                EnemyContent go = Instantiate(Main.EnemyMain.refs.enemyPrefabToSpawn, randomPosition, Quaternion.identity);
+                go.destination = destination;
+                go.timer = 0f;
+                Main.EnemyMain.enemies.Add(go);
+                
+            }
+            
             
 
         }

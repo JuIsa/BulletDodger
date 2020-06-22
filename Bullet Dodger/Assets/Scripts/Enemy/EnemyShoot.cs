@@ -22,10 +22,13 @@ public class EnemyShoot : MonoBehaviour
             
             for(int i = 0; i < Main.EnemyMain.enemies.Count; i++)
             {
-                if (Main.EnemyMain.timers[i] > 1.4f)
+                if (Main.EnemyMain.enemies[i].gameObject.activeSelf)
                 {
-                    Main.EnemyMain.timers[i] = 0f;
-                    Main.BulletMain.bulletSpawn.SpawnABullet(Main.EnemyMain.enemies[i]);
+                    if (Main.EnemyMain.enemies[i].timer > 1.4f)
+                    {
+                        Main.EnemyMain.enemies[i].timer = 0f;
+                        Main.BulletMain.bulletSpawn.SpawnABullet(Main.EnemyMain.enemies[i]);
+                    }
                 }
             }
             yield return null;

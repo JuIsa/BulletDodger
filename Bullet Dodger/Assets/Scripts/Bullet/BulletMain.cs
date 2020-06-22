@@ -20,6 +20,5 @@ public class BulletMain : MonoBehaviour
     public void BulletSpawned(BulletContent bullet)
     {
         onBulletSpawned?.Invoke(bullet);
-        Debug.Log("Bullet prefab");
     }
 }

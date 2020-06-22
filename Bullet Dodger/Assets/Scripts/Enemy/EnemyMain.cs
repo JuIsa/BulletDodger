@@ -11,20 +11,16 @@ public class EnemyMain : MonoBehaviour
     public EnemyPooling enemyPooling;
     
     public event Action init;
-    public event Action<EnemyContent, Vector3> onEnemyReachedDestination;
+    public event Action<EnemyContent> onEnemyReachedDestination;
     
 
 
     public List<EnemyContent> enemies = new List<EnemyContent>();
-    public List<Vector3> destinations = new List<Vector3>();
-    public List<float> timers = new List<float>();
-    public List<GameObject> bullets = new List<GameObject>();
-    public List<Vector3> targets = new List<Vector3>();
+    public Queue<EnemyContent> enemiesPool = new Queue<EnemyContent>();
 
     public EnemyContent player;
 
-    public Queue enemiesPool = new Queue();
-    public Queue destinationsPool = new Queue();
+    
 
     private void Start()
     {
@@ -32,9 +28,9 @@ public class EnemyMain : MonoBehaviour
         Debug.Log("Event Stated");
     }
 
-    public void ReachedDestination(EnemyContent enemy, Vector3 destination)
+    public void ReachedDestination(EnemyContent enemy)
     {
-        onEnemyReachedDestination?.Invoke(enemy, destination);
+        onEnemyReachedDestination?.Invoke(enemy);
     }
     
 }

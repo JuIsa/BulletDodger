@@ -10,15 +10,19 @@ public class EnemyPooling : MonoBehaviour
         Main.EnemyMain.onEnemyReachedDestination += EnqueueEnemy;
     }
 
-    private void EnqueueEnemy(EnemyContent enemy, Vector3 destination)
+    private void EnqueueEnemy(EnemyContent enemy)
     {
+        
+        enemy.gameObject.transform.position = UtilityCustom.GetRandomPosition();
+        enemy.destination = UtilityCustom.GetDestination();
         Main.EnemyMain.enemiesPool.Enqueue(enemy);
         enemy.gameObject.SetActive(false);
     }
 
     public EnemyContent DequeueEnemy() 
     {
-        EnemyContent enemy = (EnemyContent)Main.EnemyMain.enemiesPool.Dequeue();
+        EnemyContent enemy = Main.EnemyMain.enemiesPool.Dequeue();
+        
         enemy.gameObject.SetActive(true);
         return enemy;
     }

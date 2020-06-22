@@ -8,18 +8,28 @@ public class EnemyMove : MonoBehaviour
     private void Update()
     {
         MoveEnemies();
+        IncreaseTimerOfEnemies();
+        Debug.Log("Pool size " + Main.EnemyMain.enemiesPool.Count);
     }
 
-    private static void MoveEnemies()
+    private  void MoveEnemies()
     {
         for (int i = 0; i < Main.EnemyMain.enemies.Count; i++)
         {
-            if (Vector3.Distance(Main.EnemyMain.enemies[i].transform.position, Main.EnemyMain.destinations[i]) < .5f)
-                Main.EnemyMain.ReachedDestination(Main.EnemyMain.enemies[i], Main.EnemyMain.destinations[i]);
-            else
-                Main.EnemyMain.enemies[i].transform.position = Vector3.MoveTowards(Main.EnemyMain.enemies[i].transform.position, Main.EnemyMain.destinations[i], Time.deltaTime);
-
-            Main.EnemyMain.timers[i] += Time.deltaTime;
+            if (Vector3.Distance(Main.EnemyMain.enemies[i].transform.position, Main.EnemyMain.enemies[i].destination) < .5f)
+                Main.EnemyMain.ReachedDestination(Main.EnemyMain.enemies[i]);
+            else if(Main.EnemyMain.enemies[i].gameObject.activeSelf)
+            {
+                Main.EnemyMain.enemies[i].transform.position = Vector3.MoveTowards(Main.EnemyMain.enemies[i].transform.position, Main.EnemyMain.enemies[i].destination, Time.deltaTime);
+            }
+                
         }
+    }
+
+    private  void IncreaseTimerOfEnemies()
+    {
+        for (int i = 0; i < Main.EnemyMain.enemies.Count; i++)
+            if(Main.EnemyMain.enemies[i].gameObject.activeSelf)
+                Main.EnemyMain.enemies[i].timer += Time.deltaTime;
     }
 }

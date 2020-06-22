@@ -11,7 +11,6 @@ public class BulletCollisions : MonoBehaviour
 
     private void AddCatcherToBullet(BulletContent bullet)
     {
-        Debug.Log("bullet get collder " + bullet.gameObject);
         bullet.collisionCatcher.OnCollisionEnterEvent += collis => BulletCollected(collis, bullet);
     }
 
