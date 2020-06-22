@@ -5,8 +5,9 @@ using UnityEngine;
 public class Main : MonoBehaviour
 {
     [SerializeField] EnemyMain enemyMain;
-    
+    [SerializeField] BulletMain bulletMain;
     public static EnemyMain EnemyMain => Instance.enemyMain;
+    public static BulletMain BulletMain => Instance.bulletMain;
 
     private static Main _instance;
     

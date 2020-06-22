@@ -1,18 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
-using System;
 
 public class BulletMove : MonoBehaviour
 {
 
     private void Awake()
     {
-        Main.EnemyMain.onBulletShot += StartMovingBullets;
+        Main.BulletMain.onBulletShot += StartMovingBullets;
     }
 
     private void StartMovingBullets()
     {
-        Main.EnemyMain.onBulletShot -= StartMovingBullets;
+        Debug.Log("Received");
+        Main.BulletMain.onBulletShot -= StartMovingBullets;
         StartCoroutine(corMoveBullets());
     }
 
@@ -20,10 +20,14 @@ public class BulletMove : MonoBehaviour
     {
         while (true)
         {
-            for(int i = 0; i < Main.EnemyMain.bullets.Count; i++)
+            for(int i = 0; i < Main.BulletMain.bullets.Count; i++)
             {
-                
-                Main.EnemyMain.bullets[i].transform.position += Main.EnemyMain.bullets[i].transform.forward * Time.deltaTime * 2;
+                var step = 2 * Time.deltaTime;
+                var position = Main.BulletMain.bullets[i].gameObject.transform.forward*Time.deltaTime;
+                Main.BulletMain.bullets[i].rb.AddForce(Main.BulletMain.bullets[i].gameObject.transform.forward);
+
+                //Main.BulletMain.bullets[i].rb.velocity = Main.BulletMain.bullets[i].gameObject.transform.forward * Time.deltaTime * 2;
+                //Main.BulletMain.bullets[i].gameObject.transform.position += Main.BulletMain.bullets[i].gameObject.transform.forward * Time.deltaTime * 2;
             }
             yield return null;
         }

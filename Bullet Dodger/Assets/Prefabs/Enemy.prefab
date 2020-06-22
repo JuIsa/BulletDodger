@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1309644327046290147}
   - component: {fileID: 1309644327046290146}
   - component: {fileID: 1309644327046290158}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -107,3 +107,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   position: {x: 0, y: 0, z: 0}
+  collisionCatcher: {fileID: 0}

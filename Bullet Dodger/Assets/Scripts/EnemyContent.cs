@@ -5,4 +5,5 @@ using UnityEngine;
 public class EnemyContent : MonoBehaviour
 {
     public Vector3 position;
+    public CollisionCatcher collisionCatcher;
 }

@@ -9,9 +9,9 @@ public class EnemyMain : MonoBehaviour
     public EnemyRef refs;
     public GlobalRefs globalRefs;
     public EnemyPooling enemyPooling;
+    
     public event Action init;
     public event Action<EnemyContent, Vector3> onEnemyReachedDestination;
-    public event Action onBulletShot;
     
 
 
@@ -36,9 +36,5 @@ public class EnemyMain : MonoBehaviour
     {
         onEnemyReachedDestination?.Invoke(enemy, destination);
     }
-    public void BulletShoot()
-    {
-        onBulletShot?.Invoke();
-        Debug.Log("Shot");
-    }
+    
 }

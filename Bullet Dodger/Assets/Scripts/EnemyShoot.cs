@@ -25,11 +25,7 @@ public class EnemyShoot : MonoBehaviour
                 if (Main.EnemyMain.timers[i] > 1.4f)
                 {
                     Main.EnemyMain.timers[i] = 0f;
-                    Vector3 positionForBullet = Main.EnemyMain.enemies[i].transform.position;
-                    GameObject bullet = Instantiate(Main.EnemyMain.refs.bulletPrefab, positionForBullet, Quaternion.identity);
-                    bullet.transform.LookAt(Main.EnemyMain.player.transform);
-                    Main.EnemyMain.bullets.Add(bullet);
-                    Main.EnemyMain.BulletShoot();
+                    Main.BulletMain.bulletSpawn.SpawnABullet(Main.EnemyMain.enemies[i]);
                 }
             }
             yield return null;

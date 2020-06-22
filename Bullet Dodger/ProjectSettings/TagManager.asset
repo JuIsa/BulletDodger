@@ -7,6 +7,7 @@ TagManager:
   - Main
   - Enemy
   - Bullet
+  - Wall
   layers:
   - Default
   - TransparentFX
@@ -16,9 +17,9 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
+  - Bullets
+  - Enemies
+  - Player
   - 
   - 
   - 
