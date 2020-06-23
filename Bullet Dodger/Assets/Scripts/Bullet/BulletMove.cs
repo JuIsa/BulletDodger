@@ -1,12 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class BulletMove : MonoBehaviour
 {
-
+    private bool isGameOver = false;
     private void Awake()
     {
         Main.BulletMain.onBulletShot += StartMovingBullets;
+        Main.EnemyMain.onGameOver += ChangeBool;
+    }
+
+    private void ChangeBool()
+    {
+        isGameOver = true;
     }
 
     private void StartMovingBullets()
@@ -21,7 +28,7 @@ public class BulletMove : MonoBehaviour
         while (true)
         {
             for (int i = 0; i < Main.BulletMain.bullets.Count; i++)
-                if (Main.BulletMain.bullets[i].gameObject.activeSelf)
+                if (Main.BulletMain.bullets[i].gameObject.activeSelf && !isGameOver)
                     MoveBullet(Main.BulletMain.bullets[i]);
             yield return null;
         }

@@ -1,15 +1,26 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyMove : MonoBehaviour
 {
+    private bool isGameOver = false;
+
+    private void Awake() => Main.EnemyMain.onGameOver += ChangeBool;
+
+    private void ChangeBool()
+    {
+        isGameOver = true;
+    }
 
     private void Update()
     {
-        MoveEnemies();
-        IncreaseTimerOfEnemies();
-        
+        if (!isGameOver)
+        {
+            MoveEnemies();
+            IncreaseTimerOfEnemies();
+        }
     }
 
     private  void MoveEnemies()

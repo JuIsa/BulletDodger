@@ -11,6 +11,7 @@ public class CanvasChangeText : MonoBehaviour
     public GameObject BTN;
     public GameObject joystick;
     private int seconds;
+    private bool isGameOver = false;
     private void Start()
     {
         StartCoroutine(ChangeValue());
@@ -23,6 +24,7 @@ public class CanvasChangeText : MonoBehaviour
         joystick.SetActive(false);
         BTN.SetActive(true);
         restart.SetActive(true);
+        isGameOver = true;
     }
 
     private IEnumerator ChangeValue()
@@ -30,7 +32,8 @@ public class CanvasChangeText : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(1f);
-            seconds++;
+            if(!isGameOver)
+                seconds++;
             text.text = seconds.ToString();
         }
     }
