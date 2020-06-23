@@ -7,10 +7,9 @@ public class PlayerMove : MonoBehaviour
 {
     private Touch touch;
     [SerializeField] private float speed;
-    Vector2 screenBounds;
     void Start()
     {
-        screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
+        RayManager.DrawRaysFromCorners();
     }
 
    
