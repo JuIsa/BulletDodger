@@ -9,7 +9,7 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private float speed;
     void Start()
     {
-        RayManager.DrawRaysFromCorners();
+        RayManager.StartRays();
     }
 
    

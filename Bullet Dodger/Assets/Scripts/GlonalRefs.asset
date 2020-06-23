@@ -19,3 +19,11 @@ MonoBehaviour:
   west: {x: 3.5, y: 6}
   east: {x: -3.5, y: 6}
   north: {x: 3.5, y: 6}
+  westWall: {fileID: 2931029897362138751, guid: cb6a3d528e686b24b8f78475848eee85,
+    type: 3}
+  eastWall: {fileID: 4758837235724923023, guid: baca03a9e4913ee4684314d61013d6b2,
+    type: 3}
+  northWall: {fileID: 3476201430132737988, guid: 90692cde29f238b4bb02c03a34123a8f,
+    type: 3}
+  southWall: {fileID: 2468341775720797810, guid: a56e482200e0fd74db2955f7ddb83028,
+    type: 3}
