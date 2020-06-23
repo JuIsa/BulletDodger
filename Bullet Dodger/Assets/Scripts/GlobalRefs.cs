@@ -2,7 +2,7 @@
 using System.Collections;
 using System;
 
-[CreateAssetMenu(fileName = "GlonalRefs", menuName = "ScriptableObjects/GlobalRefs")]
+[CreateAssetMenu(fileName = "GlobalRefs", menuName = "ScriptableObjects/GlobalRefs")]
 public class GlobalRefs : ScriptableObject
 {
     public string[] sidesRelativeToScreen = new string[] { "East", "West", "North"};
