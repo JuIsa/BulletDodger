@@ -18,6 +18,8 @@ public class BulletCollisions : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Wall"))
             Main.BulletMain.BulletHitWall(bullet);
+        else if (other.gameObject.CompareTag("Player"))
+            Main.EnemyMain.GameOver();
         else
             bullet.gameObject.SetActive(false);
     }

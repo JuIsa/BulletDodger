@@ -1,7 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class Main : MonoBehaviour
 {
     [SerializeField] EnemyMain enemyMain;
@@ -20,5 +19,11 @@ public class Main : MonoBehaviour
                 _instance = GameObject.FindGameObjectWithTag("Main")?.GetComponent<Main>();
             return _instance;
         }
+    }
+
+    public void ReloadScene()
+    {
+        Debug.Log("reloading");
+        SceneManager.LoadScene("Main");
     }
 }

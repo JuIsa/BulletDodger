@@ -9,7 +9,7 @@ public class EnemyMove : MonoBehaviour
     {
         MoveEnemies();
         IncreaseTimerOfEnemies();
-        Debug.Log("Pool size " + Main.EnemyMain.enemiesPool.Count);
+        
     }
 
     private  void MoveEnemies()

@@ -14,7 +14,7 @@ public class EnemyMain : MonoBehaviour
 
     public event Action init;
     public event Action<EnemyContent> onEnemyReachedDestination;
-    
+    public event Action onGameOver;
 
 
     public List<EnemyContent> enemies = new List<EnemyContent>();
@@ -33,6 +33,11 @@ public class EnemyMain : MonoBehaviour
     public void ReachedDestination(EnemyContent enemy)
     {
         onEnemyReachedDestination?.Invoke(enemy);
+    }
+
+    public void GameOver()
+    {
+        onGameOver?.Invoke();
     }
     
 }

@@ -31,6 +31,6 @@ public class BulletMove : MonoBehaviour
     {
         var step = 2 * Time.deltaTime;
         var position = bullet.gameObject.transform.forward * Time.deltaTime;
-        bullet.rb.AddForce(bullet.gameObject.transform.forward);
+        bullet.rb.AddForce(bullet.gameObject.transform.forward*0.07f, ForceMode.Impulse);
     }
 }
