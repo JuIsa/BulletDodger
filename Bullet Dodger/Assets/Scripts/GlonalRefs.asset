@@ -27,3 +27,5 @@ MonoBehaviour:
     type: 3}
   southWall: {fileID: 2468341775720797810, guid: a56e482200e0fd74db2955f7ddb83028,
     type: 3}
+  particlePrefab: {fileID: 2113880313079661791, guid: 3c0fa787373e13f4ab05c7d6b78ca3ee,
+    type: 3}

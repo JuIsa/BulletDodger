@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class CanvasChangeText : MonoBehaviour
 {
     public Text text;
+    public Text x;
+    public Text z;
     public GameObject restart;
     public GameObject BTN;
     public GameObject joystick;
@@ -17,6 +19,12 @@ public class CanvasChangeText : MonoBehaviour
         StartCoroutine(ChangeValue());
         seconds = 0;
         Main.EnemyMain.onGameOver += GameOver;
+    }
+
+    private void FixedUpdate()
+    {
+       // x.text = Main.EnemyMain.player.gameObject.transform.position.x.ToString();
+        //z.text = Main.EnemyMain.player.gameObject.transform.position.z.ToString();
     }
 
     private void GameOver()

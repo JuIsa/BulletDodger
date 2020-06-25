@@ -9,10 +9,13 @@ public class GlobalRefs : ScriptableObject
     public Vector2 west;
     public Vector2 east;
     public Vector2 north;
+
     public GameObject westWall;
     public GameObject eastWall;
     public GameObject northWall;
     public GameObject southWall;
+
+    public GameObject particlePrefab;
 
 
 

@@ -9,7 +9,7 @@ public class Main : MonoBehaviour
     public static BulletMain BulletMain => Instance.bulletMain;
 
     private static Main _instance;
-    
+
 
     private static Main Instance
     {

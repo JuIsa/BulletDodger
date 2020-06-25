@@ -3,7 +3,9 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    private bool isGameOver = false;
+    private bool _isGameOver = false;
+    private float _timerToSpawn = 3f;
+    private float _deltaTime = 0.1f;
     private void Awake()
     {
         Main.EnemyMain.init += StartToSpawnEnemies;
@@ -13,7 +15,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void ChangeBool()
     {
-        isGameOver = true;
+        _isGameOver = true;
     }
 
     private void StartToSpawnEnemies()
@@ -25,10 +27,11 @@ public class EnemySpawner : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(3);
+            yield return new WaitForSeconds(_timerToSpawn);
+            _timerToSpawn -= _deltaTime;
             Vector3 randomPosition = UtilityCustom.GetRandomPosition();
             Vector3 destination = UtilityCustom.GetDestination();
-            if (!isGameOver)
+            if (!_isGameOver)
             {
                 if (Main.EnemyMain.enemiesPool.Count != 0)
                     GetEnemyFromPool(randomPosition, destination);
