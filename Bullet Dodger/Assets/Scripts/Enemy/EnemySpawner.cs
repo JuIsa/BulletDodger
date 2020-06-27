@@ -28,6 +28,16 @@ public class EnemySpawner : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(_timerToSpawn);
+            if (_timerToSpawn < 1.5f)
+                _deltaTime = 0f;
+            else if (_timerToSpawn < 2f)
+            {
+                _deltaTime = .05f;
+            }
+            else if(_timerToSpawn < 2.5f)
+            {
+                _deltaTime = .075f;
+            }
             _timerToSpawn -= _deltaTime;
             Vector3 randomPosition = UtilityCustom.GetRandomPosition();
             Vector3 destination = UtilityCustom.GetDestination();
